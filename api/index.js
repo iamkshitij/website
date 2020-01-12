@@ -4,6 +4,9 @@ const app = express();
 const PORT = process.env.PORT || 7000;
 const connection = require('./config/dbconfig');
 
+app.get('/', (req, res) =>{
+    res.send("Connected to index");
+})
 
 app.get('/connection', (req, res) =>{
     connection.connect(function(err){
